@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { prepositionExercises, thereIsAreExercises } from "@/lib/data";
+import { prepositionExercises, thereIsAreExercises, type PrepExercise } from "@/lib/data";
 import QuizCard from "@/components/QuizCard";
 
 interface Props {
@@ -16,6 +16,71 @@ const THERE_OPTIONS = ["is", "are"];
 const TOTAL = prepositionExercises.length + thereIsAreExercises.length;
 
 type Phase = "prepositions" | "thereIsAre";
+
+/** Visual scene showing spatial relationship */
+function PrepScene({ exercise }: { exercise: PrepExercise }) {
+  const { correct, subject, object, objectEmoji } = exercise;
+
+  // Table: represented as a flat rectangle. We use inline CSS boxes.
+  const surfaceLabel = object.charAt(0).toUpperCase() + object.slice(1);
+
+  if (correct === "on") {
+    return (
+      <div className="flex flex-col items-center gap-0 my-4 select-none" dir="ltr">
+        {/* Subject sits on top */}
+        <div className="text-5xl leading-none mb-1">{subject}</div>
+        {/* Surface */}
+        <div className="relative">
+          <div
+            className="bg-amber-700 rounded-t-sm"
+            style={{ width: 140, height: 12 }}
+          />
+          <div
+            className="bg-amber-800 rounded-b-sm mx-auto"
+            style={{ width: 100, height: 40 }}
+          />
+        </div>
+        <div className="text-xs text-gray-400 font-semibold mt-1">{objectEmoji} {surfaceLabel}</div>
+      </div>
+    );
+  }
+
+  if (correct === "under") {
+    return (
+      <div className="flex flex-col items-center gap-0 my-4 select-none" dir="ltr">
+        {/* Surface (furniture) */}
+        <div className="relative">
+          <div
+            className="bg-amber-700 rounded-t-sm"
+            style={{ width: 140, height: 12 }}
+          />
+          <div
+            className="bg-amber-800 rounded-b-sm mx-auto"
+            style={{ width: 100, height: 40 }}
+          />
+        </div>
+        {/* Subject sits underneath */}
+        <div className="text-5xl leading-none mt-1">{subject}</div>
+        <div className="text-xs text-gray-400 font-semibold mt-1">{objectEmoji} {surfaceLabel}</div>
+      </div>
+    );
+  }
+
+  // in
+  return (
+    <div className="flex flex-col items-center my-4 select-none" dir="ltr">
+      <div
+        className="relative flex items-center justify-center rounded-2xl border-4 border-amber-700 bg-amber-50"
+        style={{ width: 120, height: 100 }}
+      >
+        <div className="text-5xl">{subject}</div>
+        {/* small opening hint at top */}
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-3 bg-white" />
+      </div>
+      <div className="text-xs text-gray-400 font-semibold mt-1">{objectEmoji} {surfaceLabel}</div>
+    </div>
+  );
+}
 
 export default function Prepositions({ onProgress, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>("prepositions");
@@ -85,8 +150,11 @@ export default function Prepositions({ onProgress, onComplete }: Props) {
               </span>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-xl p-8 text-center mb-4">
-              <div className="text-6xl mb-4">{currentPrep.emoji}</div>
+            <div className="bg-white rounded-3xl shadow-xl px-6 pt-4 pb-6 text-center mb-4">
+              {/* Visual scene illustration */}
+              <PrepScene exercise={currentPrep} />
+
+              {/* Sentence with blank */}
               <p className="text-xl font-black text-gray-700 leading-loose" dir="ltr">
                 {currentPrep.sentence.split("___").map((part, i) => (
                   <span key={i}>

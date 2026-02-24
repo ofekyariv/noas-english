@@ -51,13 +51,10 @@ export default function LetterExplorer({ onProgress, onComplete }: Props) {
           className="bg-white rounded-3xl shadow-xl p-8 text-center w-full max-w-xs"
         >
           {showEmoji && (
-            <div className="text-7xl mb-4 select-none">{current.image}</div>
+            <div className="text-8xl mb-4 select-none">{current.image}</div>
           )}
-          <p className="text-4xl font-black text-gray-700 tracking-widest uppercase" dir="ltr">
-            {current.word}
-          </p>
           <p className="text-gray-400 font-semibold mt-2 text-sm">
-            ?באיזו אות מתחילה המילה
+            ?באיזו אות מתחיל מה שבתמונה
           </p>
         </motion.div>
       </AnimatePresence>

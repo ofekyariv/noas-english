@@ -108,18 +108,20 @@ export const modules: Module[] = [
 export const letterExercises = {
   letters: ["T", "E", "Y", "B", "V", "U", "D", "S", "K", "F", "H", "C", "J"],
   matchToWord: [
-    { image: "🎸", word: "guitar", correctLetter: "g", options: ["c", "g", "d"] },
+    { image: "🐶", word: "dog", correctLetter: "d", options: ["b", "d", "p"] },
     { image: "🐰", word: "rabbit", correctLetter: "r", options: ["r", "s", "g"] },
     { image: "🌸", word: "flower", correctLetter: "f", options: ["f", "u", "p"] },
     { image: "🎂", word: "cake", correctLetter: "c", options: ["a", "c", "n"] },
     { image: "🕷️", word: "spider", correctLetter: "s", options: ["s", "m", "l"] },
     { image: "🍔", word: "hamburger", correctLetter: "h", options: ["h", "o", "u"] },
-    { image: "🦍", word: "gorilla", correctLetter: "g", options: ["g", "d", "v"] },
+    { image: "🍎", word: "apple", correctLetter: "a", options: ["g", "a", "e"] },
     { image: "🍋", word: "lemon", correctLetter: "l", options: ["l", "d", "a"] },
-    { image: "🤖", word: "robot", correctLetter: "r", options: ["r", "e", "m"] },
+    { image: "🌙", word: "moon", correctLetter: "m", options: ["r", "n", "m"] },
     { image: "👦", word: "boy", correctLetter: "b", options: ["q", "b", "s"] },
-    { image: "👧", word: "girl", correctLetter: "g", options: ["g", "s", "j"] },
+    { image: "🎸", word: "guitar", correctLetter: "g", options: ["g", "s", "j"] },
     { image: "🥚", word: "egg", correctLetter: "e", options: ["e", "f", "c"] },
+    { image: "🌴", word: "tree", correctLetter: "t", options: ["t", "d", "k"] },
+    { image: "🚗", word: "car", correctLetter: "c", options: ["a", "c", "g"] },
   ],
 };
 
@@ -247,19 +249,27 @@ export const beVerbExercises = [
 ];
 
 // Module 9: Prepositions
-export const prepositionExercises = [
-  { sentence: "The cat is ___ the roof.", correct: "on", emoji: "🐱" },
-  { sentence: "The bird is ___ the nest.", correct: "in", emoji: "🐦" },
-  { sentence: "The book is ___ the bench.", correct: "on", emoji: "📖" },
-  { sentence: "The dog is ___ the bench.", correct: "under", emoji: "🐕" },
-  { sentence: "The fish is ___ the bowl.", correct: "in", emoji: "🐟" },
-  { sentence: "The bowl is ___ the table.", correct: "on", emoji: "🥣" },
-  { sentence: "The ball is ___ the table.", correct: "under", emoji: "⚽" },
-  { sentence: "The toy car is ___ the box.", correct: "in", emoji: "🚗" },
-  { sentence: "The kite is ___ the tree.", correct: "in", emoji: "🪁" },
-  { sentence: "The sun is ___ the sky.", correct: "in", emoji: "☀️" },
-  { sentence: "The dog is ___ the house.", correct: "in", emoji: "🏠" },
-  { sentence: "The cat is ___ the table.", correct: "on", emoji: "🐱" },
+export interface PrepExercise {
+  sentence: string;
+  correct: "in" | "on" | "under";
+  subject: string;
+  object: string;
+  objectEmoji: string;
+}
+
+export const prepositionExercises: PrepExercise[] = [
+  { sentence: "The cat is ___ the table.", correct: "on",    subject: "🐱", object: "table",  objectEmoji: "🪵" },
+  { sentence: "The ball is ___ the bed.",  correct: "under", subject: "⚽", object: "bed",    objectEmoji: "🛏️" },
+  { sentence: "The dog is ___ the box.",   correct: "in",    subject: "🐶", object: "box",    objectEmoji: "📦" },
+  { sentence: "The book is ___ the bag.",  correct: "in",    subject: "📖", object: "bag",    objectEmoji: "🎒" },
+  { sentence: "The cat is ___ the chair.", correct: "under", subject: "🐱", object: "chair",  objectEmoji: "🪑" },
+  { sentence: "The dog is ___ the bed.",   correct: "on",    subject: "🐶", object: "bed",    objectEmoji: "🛏️" },
+  { sentence: "The bird is ___ the tree.", correct: "in",    subject: "🐦", object: "tree",   objectEmoji: "🌳" },
+  { sentence: "The toy is ___ the box.",   correct: "in",    subject: "🧸", object: "box",    objectEmoji: "📦" },
+  { sentence: "The ball is ___ the chair.", correct: "on",   subject: "⚽", object: "chair",  objectEmoji: "🪑" },
+  { sentence: "The cat is ___ the bed.",   correct: "on",    subject: "🐱", object: "bed",    objectEmoji: "🛏️" },
+  { sentence: "The dog is ___ the table.", correct: "under", subject: "🐶", object: "table",  objectEmoji: "🪵" },
+  { sentence: "The ball is ___ the bag.",  correct: "in",    subject: "⚽", object: "bag",    objectEmoji: "🎒" },
 ];
 
 export const thereIsAreExercises = [
