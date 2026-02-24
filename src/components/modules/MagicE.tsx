@@ -74,11 +74,11 @@ export default function MagicE({ onProgress, onComplete }: Props) {
           >
             <div className="bg-white rounded-3xl shadow-xl p-8 text-center">
               <div className="text-5xl mb-4">✨</div>
-              <p className="text-gray-500 font-semibold mb-4">The base word is:</p>
-              <p className="text-5xl font-black text-gray-700 tracking-wide mb-4">
+              <p className="text-gray-500 font-semibold mb-4">המילה הבסיסית:</p>
+              <p className="text-5xl font-black text-gray-700 tracking-wide mb-4" dir="ltr">
                 {current.without}
               </p>
-              <div className="flex items-center justify-center gap-3 bg-purple-50 rounded-2xl p-3">
+              <div className="flex items-center justify-center gap-3 bg-purple-50 rounded-2xl p-3" dir="ltr">
                 <span className="text-3xl font-black text-purple-600">
                   {current.without}
                 </span>
@@ -95,7 +95,7 @@ export default function MagicE({ onProgress, onComplete }: Props) {
                   border-b-4 border-purple-700 active:border-b-2 active:translate-y-0.5
                   transition-all"
               >
-                Quiz me! 🎯
+                בחני אותי! 🎯
               </button>
             </div>
           </motion.div>
@@ -109,14 +109,14 @@ export default function MagicE({ onProgress, onComplete }: Props) {
           >
             <div className="bg-white rounded-3xl shadow-xl p-8 text-center mb-4">
               <p className="text-gray-500 font-semibold mb-2">
-                What does{" "}
-                <span className="font-black text-purple-600 text-xl">
+                מה קורה למילה{" "}
+                <span className="font-black text-purple-600 text-xl" dir="ltr">
                   {current.without}
                 </span>{" "}
-                become with Magic E?
+                עם E הקסומה?
               </p>
               <p className="text-gray-400 text-sm">
-                (add a silent &quot;e&quot; to the end!)
+                (!הוסיפי e שקטה בסוף)
               </p>
             </div>
 
@@ -131,8 +131,8 @@ export default function MagicE({ onProgress, onComplete }: Props) {
         )}
       </AnimatePresence>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

@@ -53,11 +53,11 @@ export default function LetterExplorer({ onProgress, onComplete }: Props) {
           {showEmoji && (
             <div className="text-7xl mb-4 select-none">{current.image}</div>
           )}
-          <p className="text-4xl font-black text-gray-700 tracking-widest uppercase">
+          <p className="text-4xl font-black text-gray-700 tracking-widest uppercase" dir="ltr">
             {current.word}
           </p>
           <p className="text-gray-400 font-semibold mt-2 text-sm">
-            What letter does it start with?
+            ?באיזו אות מתחילה המילה
           </p>
         </motion.div>
       </AnimatePresence>
@@ -72,8 +72,8 @@ export default function LetterExplorer({ onProgress, onComplete }: Props) {
       </div>
 
       {/* Score */}
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

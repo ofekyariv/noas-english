@@ -20,14 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="he" dir="rtl">
       <body className={`${nunito.variable} antialiased bg-purple-50 min-h-screen`}>
         <header className="sticky top-0 z-50 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-400 shadow-lg">
           <div className="max-w-4xl mx-auto px-4 py-3 text-center">
             <h1 className="text-2xl font-black text-white tracking-wide drop-shadow-md">
               🌟 Noa&apos;s English 🌟
             </h1>
-            <p className="text-purple-100 text-sm font-bold mt-0.5" dir="rtl">
+            <p className="text-purple-100 text-sm font-bold mt-0.5">
               נועה לומדת אנגלית ✏️
             </p>
           </div>

@@ -53,11 +53,11 @@ export default function Pronouns({ onProgress, onComplete }: Props) {
 
           {/* Label */}
           <div className="bg-green-50 rounded-2xl px-6 py-3 mb-4 inline-block">
-            <p className="text-2xl font-black text-gray-700">{current.label}</p>
+            <p className="text-2xl font-black text-gray-700" dir="ltr">{current.label}</p>
           </div>
 
           <p className="text-gray-500 font-semibold text-sm">
-            Which pronoun fits? 👆
+            ?איזה כינוי גוף מתאים 👆
           </p>
         </motion.div>
       </AnimatePresence>
@@ -70,8 +70,8 @@ export default function Pronouns({ onProgress, onComplete }: Props) {
         />
       </div>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

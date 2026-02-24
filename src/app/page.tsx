@@ -43,13 +43,10 @@ export default function HomePage() {
       >
         <div className="text-6xl mb-3">👋</div>
         <h2 className="text-3xl font-black text-purple-700 mb-1">
-          Hello, Noa!
+          שלום, נועה!
         </h2>
         <p className="text-gray-500 font-semibold text-lg">
-          Choose a lesson to start! 📚
-        </p>
-        <p className="text-gray-400 font-semibold text-sm mt-1" dir="rtl">
-          בחרי שיעור כדי להתחיל!
+          בחרי שיעור כדי להתחיל! 📚
         </p>
       </motion.div>
 
@@ -75,19 +72,16 @@ export default function HomePage() {
                   {stars === 3 && (
                     <div className="flex justify-end mb-1">
                       <span className="bg-white/30 text-white text-xs font-black px-2 py-0.5 rounded-full">
-                        ✓ Done!
+                        ✓ סיימתי!
                       </span>
                     </div>
                   )}
 
                   <div className="text-4xl mb-2 drop-shadow-sm">{mod.emoji}</div>
-                  <h3 className="text-white font-black text-base leading-tight drop-shadow-sm">
+                  <h3 className="text-white font-black text-base leading-tight drop-shadow-sm" dir="ltr">
                     {mod.title}
                   </h3>
-                  <p
-                    className="text-white/80 text-xs font-semibold mt-0.5"
-                    dir="rtl"
-                  >
+                  <p className="text-white/80 text-xs font-semibold mt-0.5">
                     {mod.titleHe}
                   </p>
 
@@ -120,7 +114,7 @@ export default function HomePage() {
         transition={{ delay: 1.2 }}
         className="text-center text-gray-400 font-semibold text-sm mt-10"
       >
-        You can do it, Noa! 💪✨
+        את יכולה, נועה! 💪✨
       </motion.p>
     </div>
   );

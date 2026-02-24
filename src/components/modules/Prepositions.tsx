@@ -81,13 +81,13 @@ export default function Prepositions({ onProgress, onComplete }: Props) {
             {/* Phase label */}
             <div className="text-center mb-3">
               <span className="bg-lime-100 text-lime-700 font-black px-4 py-1 rounded-full text-sm">
-                📦 Where is it?
+                📦 ?איפה זה
               </span>
             </div>
 
             <div className="bg-white rounded-3xl shadow-xl p-8 text-center mb-4">
               <div className="text-6xl mb-4">{currentPrep.emoji}</div>
-              <p className="text-xl font-black text-gray-700 leading-loose">
+              <p className="text-xl font-black text-gray-700 leading-loose" dir="ltr">
                 {currentPrep.sentence.split("___").map((part, i) => (
                   <span key={i}>
                     {part}
@@ -128,7 +128,7 @@ export default function Prepositions({ onProgress, onComplete }: Props) {
 
             <div className="bg-white rounded-3xl shadow-xl p-8 text-center mb-4">
               <div className="text-5xl mb-4">🔍</div>
-              <p className="text-xl font-black text-gray-700 leading-loose">
+              <p className="text-xl font-black text-gray-700 leading-loose" dir="ltr">
                 {currentThere.sentence.split("___").map((part, i) => (
                   <span key={i}>
                     {part}
@@ -153,8 +153,8 @@ export default function Prepositions({ onProgress, onComplete }: Props) {
         )}
       </AnimatePresence>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {globalIdx}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {globalIdx}
       </p>
     </div>
   );

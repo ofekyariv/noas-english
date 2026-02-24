@@ -66,7 +66,7 @@ export default function Colors({ onProgress, onComplete }: Props) {
             <Popsicle color={current.color} />
           </div>
           <p className="text-gray-500 font-semibold text-sm">
-            What color is this popsicle? 🍦
+            ?איזה צבע יש לגלידה 🍦
           </p>
         </motion.div>
       </AnimatePresence>
@@ -79,8 +79,8 @@ export default function Colors({ onProgress, onComplete }: Props) {
         />
       </div>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

@@ -28,7 +28,7 @@ function SentenceDisplay({ sentence, answered, correct }: {
 }) {
   const parts = sentence.split("___");
   return (
-    <p className="text-2xl font-black text-gray-700 text-center leading-loose">
+    <p className="text-2xl font-black text-gray-700 text-center leading-loose" dir="ltr">
       {parts[0]}
       {answered ? (
         <span className={`inline-block mx-1 px-3 py-1 rounded-xl border-2 ${VERB_COLORS[correct]}`}>
@@ -95,8 +95,8 @@ export default function AmIsAre({ onProgress, onComplete }: Props) {
           className="bg-white rounded-3xl shadow-xl p-8 text-center w-full max-w-sm"
         >
           {/* Subject hint */}
-          <p className="text-sm font-bold text-gray-400 mb-3">
-            Subject: <span className="text-gray-600">{current.subject}</span>
+          <p className="text-sm font-bold text-gray-400 mb-3" dir="ltr">
+            נושא: <span className="text-gray-600">{current.subject}</span>
           </p>
 
           <SentenceDisplay
@@ -115,8 +115,8 @@ export default function AmIsAre({ onProgress, onComplete }: Props) {
         />
       </div>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

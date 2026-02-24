@@ -110,7 +110,7 @@ export default function Numbers({ onProgress, onComplete }: Props) {
           </div>
 
           <p className="text-gray-500 font-semibold text-sm">
-            Which word says the number?
+            ?איזו מילה אומרת את המספר
           </p>
         </motion.div>
       </AnimatePresence>
@@ -123,8 +123,8 @@ export default function Numbers({ onProgress, onComplete }: Props) {
         />
       </div>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

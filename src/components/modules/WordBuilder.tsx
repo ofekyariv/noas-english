@@ -87,7 +87,7 @@ export default function WordBuilder({ onProgress, onComplete }: Props) {
         >
           <div className="text-6xl mb-3">{WORD_EMOJIS[current.word] || "📝"}</div>
           {/* Blanked word */}
-          <div className="flex justify-center items-end gap-1 mb-2">
+          <div className="flex justify-center items-end gap-1 mb-2" dir="ltr">
             {current.word.split("").map((ch, i) => {
               const isVowel = VOWELS.includes(ch);
               return (
@@ -105,11 +105,11 @@ export default function WordBuilder({ onProgress, onComplete }: Props) {
               );
             })}
           </div>
-          <p className="text-purple-500 font-black text-2xl tracking-[0.3em] mt-1">
+          <p className="text-purple-500 font-black text-2xl tracking-[0.3em] mt-1" dir="ltr">
             {current.blanked}
           </p>
           <p className="text-gray-400 font-semibold mt-3 text-sm">
-            Which vowel fills the blank?
+            ?איזו תנועה ממלאת את החסר
           </p>
         </motion.div>
       </AnimatePresence>
@@ -123,8 +123,8 @@ export default function WordBuilder({ onProgress, onComplete }: Props) {
         />
       </div>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {index}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {index}
       </p>
     </div>
   );

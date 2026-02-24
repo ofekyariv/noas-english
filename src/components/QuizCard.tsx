@@ -59,6 +59,7 @@ export default function QuizCard({
         </p>
       )}
       <div
+        dir="ltr"
         className={`grid gap-3 ${
           options.length <= 3
             ? "grid-cols-3"

@@ -106,13 +106,13 @@ export default function ModulePageClient({
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🤔</div>
         <h2 className="text-2xl font-black text-gray-700 mb-4">
-          Module not found!
+          שיעור לא נמצא!
         </h2>
         <Link
           href="/"
           className="bg-purple-500 text-white font-black px-6 py-3 rounded-2xl"
         >
-          Back Home
+          חזרה הביתה
         </Link>
       </div>
     );
@@ -134,10 +134,10 @@ export default function ModulePageClient({
           ←
         </Link>
         <div className="flex-1 min-w-0">
-          <h2 className="font-black text-gray-700 text-xl leading-tight">
+          <h2 className="font-black text-gray-700 text-xl leading-tight" dir="ltr">
             {module.emoji} {module.title}
           </h2>
-          <p className="text-gray-400 text-xs font-semibold" dir="rtl">
+          <p className="text-gray-400 text-xs font-semibold">
             {module.titleHe}
           </p>
         </div>
@@ -217,21 +217,21 @@ export default function ModulePageClient({
                 </p>
                 <h3 className="text-3xl font-black mb-2">
                   {stars === 3
-                    ? "Amazing!"
+                    ? "מדהים! 🌟"
                     : stars === 2
-                    ? "Great job!"
-                    : "Keep going!"}
+                    ? "כל הכבוד! 👍"
+                    : "תמשיכי לנסות! 💕"}
                 </h3>
                 <p className="text-white/80 font-semibold text-lg">
-                  {finalScore.score} out of {finalScore.total} correct
+                  {finalScore.score} מתוך {finalScore.total} נכונות
                 </p>
 
-                {/* Hebrew encouragement */}
-                <p className="text-white/70 text-sm font-semibold mt-2" dir="rtl">
+                {/* Encouragement */}
+                <p className="text-white/70 text-sm font-semibold mt-2">
                   {stars === 3
-                    ? "מדהים! כל הכבוד נועה! 🌟"
+                    ? "עבודה מושלמת, נועה! 🌟"
                     : stars === 2
-                    ? "כל הכבוד! עבודה טובה! 👍"
+                    ? "עבודה טובה מאוד! 👍"
                     : "!בסדר, תמשיכי לנסות 💕"}
                 </p>
               </motion.div>
@@ -254,7 +254,7 @@ export default function ModulePageClient({
                   py-4 rounded-2xl shadow-lg border-b-4 border-white/20
                   active:border-b-2 active:translate-y-0.5 transition-all`}
               >
-                Try Again! 🔄
+                נסי שוב! 🔄
               </button>
               <Link
                 href="/"
@@ -262,7 +262,7 @@ export default function ModulePageClient({
                   border-b-4 border-gray-200 active:border-b-2 active:translate-y-0.5
                   transition-all block"
               >
-                🏠 Back to Home
+                🏠 חזרה הביתה
               </Link>
             </motion.div>
           </motion.div>

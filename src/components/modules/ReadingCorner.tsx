@@ -166,7 +166,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
                   {readingPassages[phase.passageIdx].title}
                 </h3>
               </div>
-              <div className="bg-amber-50 rounded-2xl p-4 mb-5">
+              <div className="bg-amber-50 rounded-2xl p-4 mb-5" dir="ltr">
                 {readingPassages[phase.passageIdx].text.split("\n").map((line, i) => (
                   <p key={i} className="text-lg font-bold text-gray-700 leading-relaxed">
                     {line}
@@ -179,7 +179,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
                   text-lg py-3 rounded-2xl shadow-md border-b-4 border-fuchsia-700
                   active:border-b-2 active:translate-y-0.5 transition-all"
               >
-                Answer Questions! 🎯
+                ענִי על שאלות! 🎯
               </button>
             </div>
           </motion.div>
@@ -198,7 +198,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
               <p className="text-center text-sm font-bold text-fuchsia-500 mb-2">
                 📝 {readingPassages[phase.passageIdx].title}
               </p>
-              <p className="text-xl font-black text-gray-700 text-center">
+              <p className="text-xl font-black text-gray-700 text-center" dir="ltr">
                 {readingPassages[phase.passageIdx].questions[phase.qIdx].question}
               </p>
             </div>
@@ -223,16 +223,16 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
           >
             <div className="bg-gradient-to-br from-orange-400 to-pink-400 rounded-3xl p-8 text-center text-white shadow-xl">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-black mb-2">Read and Circle!</h3>
+              <h3 className="text-2xl font-black mb-2">קראי והקיפי! 🔍</h3>
               <p className="text-white/80 font-semibold mb-6">
-                Read the sentence and pick the right picture!
+                קראי את המשפט ובחרי את התמונה הנכונה!
               </p>
               <button
                 onClick={() => advance(score, answered)}
                 className="bg-white text-orange-600 font-black text-lg px-8 py-3 rounded-2xl
                   shadow-md border-b-4 border-orange-200 active:border-b-2 active:translate-y-0.5 transition-all"
               >
-                Let&apos;s go! 🚀
+                יאללה! 🚀
               </button>
             </div>
           </motion.div>
@@ -248,7 +248,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
             className="w-full max-w-sm"
           >
             <div className="bg-white rounded-3xl shadow-xl p-6 mb-4">
-              <p className="text-xl font-black text-gray-700 text-center">
+              <p className="text-xl font-black text-gray-700 text-center" dir="ltr">
                 {readAndCircle[phase.qIdx].sentence}
               </p>
             </div>
@@ -287,16 +287,16 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
           >
             <div className="bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl p-8 text-center text-white shadow-xl">
               <div className="text-6xl mb-4">🧩</div>
-              <h3 className="text-2xl font-black mb-2">Sentence Builder!</h3>
+              <h3 className="text-2xl font-black mb-2">בונה משפטים! 🧩</h3>
               <p className="text-white/80 font-semibold mb-6">
-                Tap the words in the right order to make a sentence!
+                לחצי על המילים בסדר הנכון כדי לבנות משפט!
               </p>
               <button
                 onClick={() => advance(score, answered)}
                 className="bg-white text-blue-600 font-black text-lg px-8 py-3 rounded-2xl
                   shadow-md border-b-4 border-blue-200 active:border-b-2 active:translate-y-0.5 transition-all"
               >
-                Let&apos;s build! 🔨
+                בואי נבנה! 🔨
               </button>
             </div>
           </motion.div>
@@ -312,11 +312,12 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
             className="w-full max-w-sm"
           >
             <p className="text-center text-sm font-bold text-gray-400 mb-2">
-              🧩 Put the words in order:
+              🧩 סדרי את המילים לפי הסדר:
             </p>
 
             {/* Answer area */}
             <div
+              dir="ltr"
               className={`bg-white rounded-2xl shadow-md min-h-[64px] p-3 mb-4 flex flex-wrap gap-2 items-center border-4 transition-colors
                 ${builderFeedback === "correct" ? "border-green-400 bg-green-50" : ""}
                 ${builderFeedback === "wrong" ? "border-red-400 bg-red-50" : ""}
@@ -325,7 +326,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
             >
               {builtWords.length === 0 ? (
                 <p className="text-gray-300 font-semibold text-sm">
-                  Tap words below to build the sentence...
+                  לחצי על המילים למטה כדי לבנות את המשפט...
                 </p>
               ) : (
                 builtWords.map((w, i) => (
@@ -342,7 +343,7 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
             </div>
 
             {/* Available words */}
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
+            <div className="flex flex-wrap gap-2 justify-center mb-4" dir="ltr">
               {available.map((w, i) => (
                 <button
                   key={`avail-${i}-${w}`}
@@ -366,17 +367,17 @@ export default function ReadingCorner({ onProgress, onComplete }: Props) {
                 active:border-b-2 active:translate-y-0.5 transition-all"
             >
               {builderFeedback === "correct"
-                ? "✅ Correct!"
+                ? "✅ נכון!"
                 : builderFeedback === "wrong"
-                ? "❌ Try again..."
-                : "Check! ✅"}
+                ? "❌ נסי שוב..."
+                : "בדקי! ✅"}
             </button>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <p className="text-gray-400 font-semibold text-sm">
-        Score: {score} / {answered}
+      <p className="text-gray-400 font-semibold text-sm" dir="ltr">
+        ניקוד: {score} / {answered}
       </p>
     </div>
   );
